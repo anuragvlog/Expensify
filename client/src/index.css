@@ -1,16 +1,16 @@
-*{
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
-.content{
+.content {
   height: 80vh;
 }
 
-.register-page{
+.resgister-page {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   height: 90vh;
 }
