@@ -1,8 +1,10 @@
 const express = require("express");
-const app = express();
 const mongoose = require("mongoose");
 const dotenv = require("dotenv")
+const cors = require("cors")
+dotenv.config()
 
+const app = express();
 
 mongoose.set('strictQuery', true);
 dotenv.config();
@@ -14,7 +16,12 @@ mongoose.connect(process.env.MONGO_URL,{
     console.log(err);
 });
 
+app.use(cors())
 app.use(express.json());
+
+app.get("/", (req, res)=>{
+    res.send("<h1>Hello from server</h1>")
+})
 
 
 app.listen(process.env.PORT, ()=>{
