@@ -1,11 +1,30 @@
-const transectionModel = require("../models/transectionModel");
+const Transaction = require("../models/Transaction");
 
-const getAllTransection = () => { };
+const getAllTransaction = async (req, res) => {
+    try {
+        const transactions = await Transaction.find({
+            userid: req.body.userid,
+        });
+        res.status(200).json(transactions);
+    } catch (error) {
+        console.log(error);
+        res.status(500).json(error);
+    }
+};
 
-const deleteTransection = () => { };
+const deleteTransaction = () => { };
 
-const editTransection = () => { };
+const editTransaction = () => { };
 
-const addTransection = () => { };
+const addTransaction = async (req, res) => {
+    try {
+        const newTransaction = new Transaction(req.body);
+        await newTransaction.save();
+        res.status(201).send("Transaction Created");
+    } catch (error) {
+        console.log(error);
+        res.status(500).json(error);
+    }
+};
 
-module.exports = { getAllTransection, addTransection, editTransection, deleteTransection, };
+module.exports = { getAllTransaction, addTransaction, editTransaction, deleteTransaction, };

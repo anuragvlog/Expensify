@@ -1,18 +1,18 @@
 const express = require("express");
-const { addTransection, getAllTransection, editTransection, deleteTransection, } = require("../controllers/transectionCtrl");
+const { addTransaction, getAllTransaction, editTransaction, deleteTransaction, } = require("../controllers/transactionController");
 
 //router object
 const router = express.Router();
 
 //routes
-//add transection POST MEthod
-router.post("/add-transection", addTransection);
-//Edit transection POST MEthod
-router.post("/edit-transection", editTransection);
-//Delete transection POST MEthod
-router.post("/delete-transection", deleteTransection);
+//add transaction POST MEthod
+router.post("/add-transaction", addTransaction);
+//Edit transaction POST MEthod
+router.post("/edit-transaction", editTransaction);
+//Delete transaction POST MEthod
+router.post("/delete-transaction", deleteTransaction);
 
-//get transections
-router.post("/get-transection", getAllTransection);
+//get transactions
+router.post("/get-transaction", getAllTransaction);
 
 module.exports = router;
