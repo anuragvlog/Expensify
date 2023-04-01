@@ -30,6 +30,7 @@ const Login = () => {
             navigate("/");
         }
     }, [navigate]);
+    
     return (
         <>
             <div className="resgister-page ">

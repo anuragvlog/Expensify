@@ -26,6 +26,7 @@ const Register = () => {
             navigate("/");
         }
     }, [navigate]);
+    
     return (
         <>
             <div className="resgister-page ">
