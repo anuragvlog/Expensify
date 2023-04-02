@@ -17,7 +17,7 @@ const getAllTransaction = async (req, res) => {
                     $lte: selectedDate[1]
                 }
             }),
-            ...(type !== 'all' && {type})
+            ...(type !== 'all' && { type })
         });
         res.status(200).json(transactions);
     } catch (error) {
@@ -26,15 +26,34 @@ const getAllTransaction = async (req, res) => {
     }
 };
 
-const deleteTransaction = () => { };
+const deleteTransaction = async (req, res) => {
+    try {
+        await Transaction.findOneAndDelete({ _id: req.body.transactionId });
+        res.status(200).send('Transaction Deleted Successfully!')
+    } catch (error) {
+        console.log(error)
+        res.status(500).json(error)
+    }
+};
 
-const editTransaction = () => { };
+const editTransaction = async (req, res) => {
+    try {
+        await Transaction.findOneAndUpdate(
+            { _id: req.body.transactionId },
+            req.body.payload
+        );
+        res.status(200).send('Edited Successfully!')
+    } catch (error) {
+        console.log(error)
+        res.status(500).json(error)
+    }
+};
 
 const addTransaction = async (req, res) => {
     try {
         const newTransaction = new Transaction(req.body);
         await newTransaction.save();
-        res.status(201).send("Transaction Created");
+        res.status(201).send("Transaction Created Successfully!");
     } catch (error) {
         console.log(error);
         res.status(500).json(error);
