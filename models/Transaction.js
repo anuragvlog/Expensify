@@ -18,14 +18,14 @@ const transactionSchema = new mongoose.Schema({
         required: [true, 'Category is required']
     },
     reference: {
-        type: String
+        type: String,
     },
     description: {
         type: String,
         required: [true, 'Description is required']
     },
     date: {
-        type: String,
+        type: Date,
         required: [true, 'Date is required']
     }
 }, { timestamps: true })
