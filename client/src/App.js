@@ -1,5 +1,5 @@
 import { Routes, Route, Navigate } from "react-router-dom";
-import HomePage from "./pages/Home";
+import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 
@@ -11,7 +11,7 @@ function App() {
           path="/"
           element={
             <ProtectedRoutes>
-              <HomePage />
+              <Home />
             </ProtectedRoutes>
           }
         />
