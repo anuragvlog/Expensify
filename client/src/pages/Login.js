@@ -36,7 +36,7 @@ const Login = () => {
             <div className="resgister-page ">
                 {loading && <Spinner />}
                 <Form layout="vertical" onFinish={submitHandler}>
-                    <h1>Login Form</h1>
+                    <h1>LOGIN</h1>
 
                     <Form.Item label="Email" name="email">
                         <Input type="email" />
@@ -44,9 +44,11 @@ const Login = () => {
                     <Form.Item label="Password" name="password">
                         <Input type="password" />
                     </Form.Item>
-                    <div className="d-flex justify-content-between">
-                        <Link to="/register">Not a user ? Cleck Here to regsiter</Link>
-                        <button className="btn btn-primary">Login</button>
+                    <div>
+                        <div>Don't have an account yet? <Link to="/register">Click Here</Link> to Register</div>
+                        <div className="button">
+                            <button className="btn-login btn btn-primary">Login</button>
+                        </div>
                     </div>
                 </Form>
             </div>

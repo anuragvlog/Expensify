@@ -19,7 +19,7 @@ const Header = () => {
   };
 
   return (
-    <>
+    <div className="hdr">
       <nav className="navbar navbar-expand-lg bg-light">
         <div className="container-fluid">
           <button
@@ -51,7 +51,7 @@ const Header = () => {
           </div>
         </div>
       </nav>
-    </>
+    </ div>
   );
 };
 
